@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" styleClass="dark-gray-theme" stylesheets="@sample.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PhoneBookController">
+   <top>
+      <Label stylesheets="@sample.css" text="电话簿管理" textFill="WHITE" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+   </top>
+   <left>
+      <AnchorPane prefHeight="373.0" prefWidth="260.0" BorderPane.alignment="CENTER">
+         <children>
+            <TabPane prefHeight="373.0" prefWidth="260.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Add">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="111.0" layoutY="186.0" mnemonicParsing="false" onAction="#add" stylesheets="@sample.css" text="添加" />
+                              <Button layoutX="170.0" layoutY="186.0" mnemonicParsing="false" onAction="#add_reset" stylesheets="@sample.css" text="重置" />
+                              <Group layoutY="31.0">
+                                 <children>
+                                    <Label layoutX="28.0" layoutY="53.0" text="Name：" textFill="WHITE" />
+                                    <TextField fx:id="add_name" layoutX="86.0" layoutY="47.0" prefHeight="30.0" prefWidth="132.0" />
+                                 </children>
+                              </Group>
+                              <Group layoutY="44.0" />
+                              <Group layoutY="88.0">
+                                 <children>
+                                    <Label layoutX="28.0" layoutY="53.0" text="Phone：" textFill="WHITE" />
+                                    <TextField fx:id="add_phone" layoutX="86.0" layoutY="48.0" prefHeight="30.0" prefWidth="132.0" />
+                                 </children>
+                              </Group>
+                              <Label layoutX="80.0" layoutY="20.0" text="新增联系人" textFill="#a1a1a1">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Delete">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="74.0" layoutY="33.0" text="删除联系人" textFill="#a1a1a1">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Group />
+                              <Group layoutY="45.0" />
+                              <Button layoutX="173.0" layoutY="152.0" mnemonicParsing="false" onAction="#delete_reset" text="重置" />
+                              <Button layoutX="119.0" layoutY="152.0" mnemonicParsing="false" onAction="#delete" text="删除" />
+                              <TextField fx:id="delete_name" layoutX="97.0" layoutY="95.0" prefHeight="30.0" prefWidth="132.0" />
+                              <Label layoutX="29.0" layoutY="100.0" text="Name：" textFill="WHITE" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Update">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="80.0" layoutY="28.0" text="修改联系人" textFill="#a1a1a1">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Group />
+                              <Group />
+                              <Group />
+                              <Button layoutX="186.0" layoutY="194.0" mnemonicParsing="false" onAction="#update_reset" text="重置" />
+                              <Button layoutX="131.0" layoutY="194.0" mnemonicParsing="false" onAction="#update" text="修改" />
+                              <Label layoutX="29.0" layoutY="89.0" text="Name：" textFill="WHITE" />
+                              <Label layoutX="28.0" layoutY="141.0" text="Phone：" textFill="WHITE" />
+                              <TextField fx:id="update_phone" layoutX="104.0" layoutY="136.0" prefHeight="30.0" prefWidth="132.0" />
+                              <TextField fx:id="update_name" layoutX="104.0" layoutY="84.0" prefHeight="30.0" prefWidth="132.0" />
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Search">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="181.0" layoutY="118.0" mnemonicParsing="false" onAction="#search_reset" text="重置" />
+                              <Button layoutX="120.0" layoutY="118.0" mnemonicParsing="false" onAction="#search" text="查询" />
+                              <Label layoutX="80.0" layoutY="30.0" text="查询联系人" textFill="#a1a1a1">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Group />
+                              <Group layoutY="43.0" />
+                              <Group layoutY="88.0" />
+                              <TextField fx:id="search_lastName" layoutX="104.0" layoutY="187.0" prefHeight="30.0" prefWidth="132.0" />
+                              <Label layoutX="14.0" layoutY="192.0" text="LastName：" textFill="WHITE" />
+                              <Button layoutX="125.0" layoutY="231.0" mnemonicParsing="false" onAction="#searchLastName" text="查询" />
+                              <Button layoutX="186.0" layoutY="231.0" mnemonicParsing="false" onAction="#searchLastName_reset" text="重置" />
+                              <TextField fx:id="search_name" layoutX="101.0" layoutY="74.0" prefHeight="30.0" prefWidth="132.0" />
+                              <Label layoutX="16.0" layoutY="79.0" text="Name：" textFill="WHITE" />
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <TableView fx:id="tableView" onSort="#add" prefHeight="372.0" prefWidth="240.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
